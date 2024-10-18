@@ -1,0 +1,291 @@
+@keyframes zoominout {
+    0% {
+        transform: scale(1.1)
+    }
+
+    50% {
+        transform: scale(1.2)
+    }
+
+    100% {
+        transform: scale(1)
+    }
+}
+
+#sport-content img {
+    filter: brightness(1);
+    -moz-transition: all .3s;
+    -webkit-transition: all .3s;
+    transition: all .3s;
+    width: 100%
+}
+
+#sport-content img:not(.coming-soon):hover {
+    filter: brightness(.5);
+    cursor: pointer
+}
+
+#sport-content img.coming-soon {
+    -webkit-filter: grayscale(100%);
+    -moz-filter: grayscale(100%);
+    -o-filter: grayscale(100%);
+    -ms-filter: grayscale(100%);
+    filter: grayscale(100%)
+}
+
+#sport-content img.active {
+    filter: brightness(.5);
+    -moz-transform: scale(1.05);
+    -webkit-transform: scale(1.05);
+    transform: scale(1.05);
+    border: 2px solid #e6b932
+}
+
+#product-body {
+    padding-top: 1rem
+}
+
+#product-filter {
+    position: relative;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    color: #989898;
+    border-bottom: 1px solid #696969
+}
+
+#product-filter .primary-filter {
+    padding-left: 10px;
+    padding-right: 10px;
+    margin-bottom: 0
+}
+
+#product-filter .game-group {
+    display: inline-block
+}
+
+#product-body .accordion-title {
+    font-size: 1rem;
+    color: #020003;
+    background: #e6b932;
+    border: 1px solid #020003
+}
+
+#product-body .accordion-title::before {
+    font-family: "FontAwesome";
+    content: "";
+    transition: transform .2s
+}
+
+#product-body .accordion-content {
+    background: transparent;
+    border: none;
+    padding-bottom: 0
+}
+
+ul#filter-category li {
+    display: block;
+    margin: 10px
+}
+
+@media screen and (max-width: 64em) {
+    ul#filter-category li {
+        display:inline-block;
+        margin: 2px 8px
+    }
+}
+
+ul#filter-category li a {
+    display: block;
+    color: #ccc;
+    padding: 10px;
+    border: 1px dashed #555;
+    position: relative;
+    margin-bottom: 8px;
+    border-radius: 10px;
+    background-color: #000;
+    font-weight: bold;
+    line-height: 1em;
+    text-align: left
+}
+
+ul#filter-category li a.is-active {
+    background-color: #e6b932;
+    color: #000;
+    border-style: solid
+}
+
+ul#filter-category li a.is-active:before {
+    font-family: FontAwesome;
+    content: "";
+    float: left;
+    color: #1b9448;
+    margin-right: 1rem
+}
+
+ul#filter-category li a:hover {
+    border-color: #e6b932
+}
+
+.filter-name {
+    position: relative;
+    margin: .5rem 0;
+    overflow: hidden;
+    border-radius: 20px;
+    width: 80px;
+    max-width: 300px;
+    transition: width .2s
+}
+
+@media screen and (max-width: 40em) {
+    .filter-name {
+        margin:0
+    }
+}
+
+.filter-name input {
+    padding-left: .8rem;
+    padding-right: 30px
+}
+
+.filter-name input+i {
+    position: absolute;
+    top: 0;
+    right: 48px;
+    padding: .4rem 0;
+    font-size: 1.2rem;
+    line-height: 1.2rem;
+    color: #ff2a00;
+    cursor: pointer
+}
+
+.filter-name button {
+    border: none;
+    width: 80px;
+    transition: width .2s
+}
+
+.filter-name.is-focus {
+    margin-left: 1rem;
+    width: 100%
+}
+
+.filter-name.is-focus button {
+    width: 40px
+}
+
+.filter-name:not(.is-focus) input {
+    padding: 0;
+    border: 0
+}
+
+.filter-name:not(.has-value) input+i {
+    display: none
+}
+
+.filter-favouriteGame {
+    position: relative;
+    width: 125px;
+    max-width: 300px;
+    margin: .5rem
+}
+
+.filter-favouriteGame .button {
+    min-width: 100%;
+    border-radius: 20px
+}
+
+.filter-favouriteGame .button i {
+    margin-right: .5rem;
+    color: #ff2a00!important;
+    animation: zoominout .5s infinite;
+    -ms-animation: zoominout .5s infinite;
+    -moz-animation: zoominout .5s infinite;
+    -webkit-animation: zoominout .5s infinite;
+    -o-animation: zoominout .5s infinite
+}
+
+@media screen and (max-width: 50em) {
+    .filter-favouriteGame .button {
+        min-width:100%;
+        margin-right: 0
+    }
+}
+
+@media screen and (max-width: 50em) {
+    .filter-favouriteGame {
+        min-width:100%;
+        margin-right: 0
+    }
+}
+
+#product-body #gameContainer-title {
+    padding: .5rem 0;
+    margin-bottom: 1rem;
+    border-bottom: 1px solid #ecc95f
+}
+
+#product-body #gameContainer-title>* {
+    vertical-align: middle
+}
+
+#product-body #gameContainer-title h1 {
+    display: inline-block;
+    font-size: 2rem;
+    margin: 0
+}
+
+#product-body button.btnClearFilter {
+    position: relative;
+    width: 65px;
+    height: 26px;
+    line-height: 26px;
+    border-radius: 13px;
+    margin-left: 1rem;
+    text-align: center;
+    padding: 0 30px 0 5px;
+    cursor: pointer;
+    color: #e6b932;
+    background: #020003;
+    visibility: hidden;
+    opacity: 0;
+    transition: opacity .2s,visibility .2s
+}
+
+#product-body button.btnClearFilter i.fa-close {
+    position: absolute;
+    top: 2px;
+    right: 2px;
+    height: 22px;
+    width: 30px;
+    line-height: 22px;
+    border-radius: 11px;
+    font-size: .8rem;
+    color: #ecc95f;
+    background: #f7e8ba
+}
+
+#product-body button.btnClearFilter:hover i.fa-close {
+    background: #f1d88d
+}
+
+#product-body button.btnClearFilter.is-active {
+    visibility: visible;
+    opacity: 1
+}
+
+#filter-provider {
+    padding: 1rem 0
+}
+
+#filter-provider #filter-provider-swiper {
+    margin-left: 30px;
+    margin-right: 30px
+}
+
+#filter-provider button.swiper-slide {
+    display: inline-block;
+    width: auto;
+    padding: 5px 15px;
+    margin: 0 .5rem;
+    transition: background .2s
+}
